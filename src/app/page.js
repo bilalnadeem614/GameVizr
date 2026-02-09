@@ -91,7 +91,7 @@ export default function Home() {
             href="/dashboard/projects"
             className="hidden text-sm font-medium uppercase tracking-[0.2em] text-white/80 transition hover:text-white md:block"
           >
-            Projects
+            
           </Link>
 
           {/* Mobile Menu Button */}
@@ -165,7 +165,7 @@ export default function Home() {
               alongside your team.
             </p>
             <Link
-              href="/dashboard/projects"
+              href="/demo"
               className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#0a0a0a] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:translate-y-[-2px] hover:bg-white/90"
             >
               Get Started
@@ -265,7 +265,7 @@ export default function Home() {
                 </p>
               </div>
               <Link
-                href="/dashboard/projects"
+                href="/demo"
                 className="inline-flex items-center justify-center rounded-full bg-[#10B981] px-8 py-4 text-sm font-semibold uppercase tracking-[0.3em] text-[#0a0a0a] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)] hover:translate-y-[-2px] hover:bg-[#13c38f]"
               >
                 Create Project
