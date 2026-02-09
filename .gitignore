@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+gen-lang-client-0087589677-2cd3c5a37c60.json

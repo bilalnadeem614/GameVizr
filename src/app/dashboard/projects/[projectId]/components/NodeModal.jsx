@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import ReactMarkdown from 'react-markdown';
 
-export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig, output, onGenerate }) {
+export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig, output, error }) {
   const [activeTab, setActiveTab] = useState('config');
   const [mounted, setMounted] = useState(false);
 
@@ -195,6 +196,18 @@ export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig
                 className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all"
               />
             </div>
+            <div className="flex items-center gap-3">
+              <input
+                id="useAsGameDoc"
+                type="checkbox"
+                checked={Boolean(config.useAsGameDoc)}
+                onChange={(e) => setConfig({ ...config, useAsGameDoc: e.target.checked })}
+                className="h-4 w-4 rounded border-white/30 bg-white/10 text-white focus:ring-white/50"
+              />
+              <label htmlFor="useAsGameDoc" className="text-sm text-white/80">
+                Save output as Game Doc for other nodes
+              </label>
+            </div>
           </div>
         );
       
@@ -254,8 +267,19 @@ export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig
           ) : (
             <div>
               {output ? (
-                <div className="bg-slate-800/50 border border-white/10 rounded-xl p-4 text-white/90 whitespace-pre-wrap">
-                  {output}
+                <div className="bg-slate-800/50 border border-white/10 rounded-xl p-4 text-white/90">
+                  <ReactMarkdown className="prose prose-invert max-w-none">
+                    {typeof output === 'string' ? output : output?.text}
+                  </ReactMarkdown>
+                  {output?.imageUrl && (
+                    <div className="mt-4">
+                      <img
+                        src={output.imageUrl}
+                        alt="Generated output"
+                        className="w-full rounded-lg border border-white/10"
+                      />
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="text-center py-12 text-white/50">
@@ -263,7 +287,7 @@ export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                   <p className="text-lg font-medium">No output yet</p>
-                  <p className="text-sm mt-2">Click "Generate" to see the output</p>
+                  <p className="text-sm mt-2">Run the flow to generate output</p>
                 </div>
               )}
             </div>
@@ -278,16 +302,12 @@ export default function NodeModal({ isOpen, onClose, nodeType, config, setConfig
           >
             Close
           </button>
-          <button
-            onClick={() => {
-              onGenerate();
-              setActiveTab('output');
-            }}
-            className={`px-6 py-2.5 bg-gradient-to-r ${colors.gradient} hover:shadow-lg hover:shadow-${colors.primary}-500/50 rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105 active:scale-95`}
-          >
-            Generate
-          </button>
         </div>
+        {error && (
+          <div className="px-6 pb-6 text-sm text-red-300">
+            {error}
+          </div>
+        )}
       </div>
     </div>
   );
