@@ -11,30 +11,25 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const contributors = [
   {
-    name: "John Doe",
-    email: "john@example.com",
-    linkedinUrl: "https://linkedin.com/in/johndoe",
-    githubUrl: "https://github.com/johndoe",
+    name: "Bilal Nadeem",
+    email: "bilalnadeem883@gmailcom",
+    linkedinUrl: "https://linkedin.com/in/bilalnadeem614",
+    githubUrl: "https://github.com/bilalnadeem614",
   },
   {
-    name: "Jane Smith",
-    email: "jane.smith@example.com",
-    linkedinUrl: "https://linkedin.com/in/janesmith",
-    githubUrl: "https://github.com/janesmith",
+    name: "Hussnain Ahmad",
+    email: "hussnainahmad1606@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/hussnain-ahmad",
+    githubUrl: "https://github.com/itspsychocoder",
   },
   {
-    name: "Alex Johnson",
-    email: "alex.j@example.com",
-    linkedinUrl: "https://linkedin.com/in/alexjohnson",
-    githubUrl: "https://github.com/alexjohnson",
-  },
-  {
-    name: "Sarah Williams",
-    email: "sarah.w@example.com",
-    linkedinUrl: "https://linkedin.com/in/sarahwilliams",
-    githubUrl: "https://github.com/sarahwilliams",
+    name: "Muhammad Talha",
+    email: "muhammadtalhashahid2005@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/muhammadtaalhaa/",
+    githubUrl: "https://github.com/RanaTalha04",
   },
 ];
+
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -280,9 +275,6 @@ export default function Home() {
               <h2 className="text-3xl font-semibold md:text-4xl">
                 Our Contributors
               </h2>
-              <span className="text-sm uppercase tracking-[0.2em] text-[#F97316]">
-                Core Crew
-              </span>
             </div>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {contributors.map((contributor) => (
