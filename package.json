@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "narrativ",
   "version": "0.1.0",
@@ -21,3 +22,26 @@
     "tailwindcss": "^4"
   }
 }
+=======
+{
+  "name": "narrativ",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "lucide-react": "^0.563.0",
+    "next": "^16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "reactflow": "^11.11.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4"
+  }
+}
+>>>>>>> 7ae75adb4b125a02166223e39a5dde7b5e24d9a0
