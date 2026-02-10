@@ -3,7 +3,6 @@
 GameVizr is an AI-powered visual game design tool that empowers creators to build and visualize game concepts using a node-based interface. Built with Next.js and React Flow, it leverages Google Vertex AI (Gemini) to generate stories, character designs, and level concepts dynamically.
 
 ## 🚀 Features
-
 - **Infinite Canvas**: A flexible, node-based workspace where you can organize your game design elements.
 - **AI-Powered Generation**: Utilizes Google Vertex AI (Gemini) to turn text prompts into detailed game assets.
 - **Specialized Nodes**:
